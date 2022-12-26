@@ -7,7 +7,7 @@ R = 1
 ma = 10
 mb = 0.99
 mc = 0.0001
-point = 'L3'
+point = 'L2'
 
 # funcs
 def init_omega(ma, mb, mc, pa, pb, pc):
@@ -45,7 +45,7 @@ def L2(ma, mb, r):
     x = 0.1
     while True:
         next_x = iter(ma, mb, x)
-        if abs(next_x-x) < 1e-45 : return vector(next_x+r,0,0)
+        if abs(next_x-x) < 1e-45 : return vector(-next_x+r,0,0)
         x = next_x
         
 def L3(ma, mb, r):
@@ -60,11 +60,12 @@ def L3(ma, mb, r):
         x = next_x
         
 def L4(ma,mb,r):
-    return vector(-0.5*r,sqrt(3)/2*r,0)
+    return vector(0.5*r,sqrt(3)/2*r,0)
 
 def L5(ma,mb,r):
-    return vector(-0.5*r,-sqrt(3)/2*r,0)
+    return vector(0.5*r,-sqrt(3)/2*r,0)
 
+scene = canvas(width = 800, height = 800)
 sa = sphere(radius=0.1*R, make_trail=True, color=color.yellow, m=ma)
 sb = sphere(radius=0.04*R, make_trail=True, color=color.blue, m=mb)
 sc = sphere(radius=0.04*R, make_trail=True, color=color.white, m=mc)

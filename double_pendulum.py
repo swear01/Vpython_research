@@ -38,7 +38,7 @@ class Nunchakus:
         self.spring2.color = color        
 
 
-        
+scene = canvas(width = 800, height = 800)
 ns = [Nunchakus(1,-(0.2+i*0.001)*pi, 0.8*pi) for i in range(7)]
 ns[0].set_color(color.red)
 ns[1].set_color(color.orange)

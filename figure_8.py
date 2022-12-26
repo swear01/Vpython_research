@@ -11,9 +11,11 @@ vx, vy = 0.4, 0.5
 def grvt(ma,pa,pb):
     return ma*G/mag2(pa-pb)*norm(pa-pb)
 
+scene = canvas(width = 800, height = 800)
 sa = sphere(radius=0.05, make_trail=True, color=color.yellow,pos=vec(-1,0,0),v=vec(vx,vy,0))
 sb = sphere(radius=0.05, make_trail=True, color=color.blue,pos=vec(0,0,0),v=vec(-2*vx,-2*vy,0))
 sc = sphere(radius=0.05, make_trail=True, color=color.red,pos=vec(1,0,0),v=vec(vx,vy,0))
+
 
 while True:
     rate(100000)

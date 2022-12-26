@@ -1,13 +1,13 @@
 from random import uniform
 from vpython import *
 
-dt = 1e-4
+dt = 2e-5
 G = 1
 R = 1
 ma = 71.44
 mb = 11.01
 mc = 0.00001
-point = 'L2'
+point = 'L4'
 
 # funcs
 def L1(ma, mb, r):
@@ -51,6 +51,7 @@ def L4(ma,mb,r):
 def L5(ma,mb,r):
     return vector(0.5*r,-sqrt(3)/2*r,0)
 
+scene = canvas(width = 800, height = 800)
 sa = sphere(radius=0.1*R, make_trail=True, color=color.yellow, m=ma)
 sb = sphere(radius=0.04*R, make_trail=True, color=color.blue, m=mb)
 sc = sphere(radius=0.04*R, make_trail=True, color=color.white, m=mc)
